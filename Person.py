@@ -6,22 +6,32 @@ class Person:
     TotalDeaths = 0
     TotalInfectedNow = 0
     TransitionPeriods = 12
-    CriticalDistanceOfInfection = 10
-    LimitY = 500
-    LimitX = 500
+    CriticalDistanceOfInfection = 10 # pixels
+    willLastPeriodsInfected = 50
+    canHeal = [0,0,0,0,0,1,1,1,1,1] # initialized at 50%
+    LimitY = 500 # pixels
+    LimitX = 500 # pixels
 
 
-    def __init__(self,posx, posy, isTransitioning):
-        self.posx = posx
-        self.posy = posy
-        self.isInfected = False
-        self.isTransitioning = isTransitioning
-        self.transitionPeriods = 0
-        self.periodsInfected = 0
-        self.willLastPeriodsInfected = randint(50)
-        self.isDead = False
-        self.canHeal = bool(choice([0,0,0,0,0,1,1,1,1,1]))
-        # print(f'posx:{self.posx}, posy:{self.posy}, isInfected:{self.isInfected}, isTransitioning:{self.isTransitioning}, transitionPeriods:{self.transitionPeriods}, periodsInfected:{self.periodsInfected}, willLastPeriodsInfected:{self.willLastPeriodsInfected}, isDead:{self.isDead}.')
+    def __init__(self,posx=None, posy=None, isTransitioning=None, setup=False, CriticalDistanceOfInfection=None, TransitionPeriods=None, canHeal=None, willLastPeriodsInfected=None, LimitX=None, LimitY=None):
+        if setup:
+            Person.CriticalDistanceOfInfection = CriticalDistanceOfInfection
+            Person.TransitionPeriods = TransitionPeriods
+            Person.canHeal = canHeal
+            Person.willLastPeriodsInfected = willLastPeriodsInfected
+            Person.LimitY = LimitY
+            Person.LimitX = LimitX
+        else:
+            self.posx = posx
+            self.posy = posy
+            self.isInfected = False
+            self.isTransitioning = isTransitioning
+            self.transitionPeriods = 0
+            self.periodsInfected = 0
+            self.willLastPeriodsInfected = randint(Person.willLastPeriodsInfected)
+            self.isDead = False
+            self.canHeal = bool(choice(Person.canHeal))
+            # print(f'posx:{self.posx}, posy:{self.posy}, isInfected:{self.isInfected}, isTransitioning:{self.isTransitioning}, transitionPeriods:{self.transitionPeriods}, periodsInfected:{self.periodsInfected}, willLastPeriodsInfected:{self.willLastPeriodsInfected}, isDead:{self.isDead}.')
 
 
     def updatePerson(self, move):
