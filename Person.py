@@ -7,18 +7,18 @@ class Person:
     TotalInfectedNow = 0
     TransitionPeriods = 12
     CriticalDistanceOfInfection = 10 # pixels
-    willLastPeriodsInfected = 50
-    canHeal = [0,0,0,0,0,1,1,1,1,1] # initialized at 50%
+    WillLastPeriodsInfected = 50
+    CanHeal = [0,0,0,0,0,1,1,1,1,1] # initialized at 50%
     LimitY = 500 # pixels
     LimitX = 500 # pixels
 
 
-    def __init__(self,posx=None, posy=None, isTransitioning=None, setup=False, CriticalDistanceOfInfection=None, TransitionPeriods=None, canHeal=None, willLastPeriodsInfected=None, LimitX=None, LimitY=None):
+    def __init__(self,posx=None, posy=None, isTransitioning=None, setup=False, CriticalDistanceOfInfection=None, TransitionPeriods=None, CanHeal=None, WillLastPeriodsInfected=None, LimitX=None, LimitY=None):
         if setup:
             Person.CriticalDistanceOfInfection = CriticalDistanceOfInfection
             Person.TransitionPeriods = TransitionPeriods
-            Person.canHeal = canHeal
-            Person.willLastPeriodsInfected = willLastPeriodsInfected
+            Person.CanHeal = CanHeal
+            Person.WillLastPeriodsInfected = WillLastPeriodsInfected
             Person.LimitY = LimitY
             Person.LimitX = LimitX
         else:
@@ -28,20 +28,21 @@ class Person:
             self.isTransitioning = isTransitioning
             self.transitionPeriods = 0
             self.periodsInfected = 0
-            self.willLastPeriodsInfected = randint(Person.willLastPeriodsInfected)
+            self.WillLastPeriodsInfected = randint(Person.WillLastPeriodsInfected)
             self.isDead = False
-            self.canHeal = bool(choice(Person.canHeal))
-            # print(f'posx:{self.posx}, posy:{self.posy}, isInfected:{self.isInfected}, isTransitioning:{self.isTransitioning}, transitionPeriods:{self.transitionPeriods}, periodsInfected:{self.periodsInfected}, willLastPeriodsInfected:{self.willLastPeriodsInfected}, isDead:{self.isDead}.')
+            self.CanHeal = bool(choice(Person.CanHeal))
+            # print(f'posx:{self.posx}, posy:{self.posy}, isInfected:{self.isInfected}, isTransitioning:{self.isTransitioning}, transitionPeriods:{self.transitionPeriods}, periodsInfected:{self.periodsInfected}, WillLastPeriodsInfected:{self.WillLastPeriodsInfected}, isDead:{self.isDead}.')
 
 
     def updatePerson(self, move):
         if (not self.isDead):
             self.checkIsTransitioning()
             self.checkIsInfected()
-            self.checkIsHealed()
+            
             self.giveMovement(move)
             self.checkIsDead()
-            # print(f'posx:{self.posx}, posy:{self.posy}, isInfected:{self.isInfected}, isTransitioning:{self.isTransitioning}, transitionPeriods:{self.transitionPeriods}, periodsInfected:{self.periodsInfected}, willLastPeriodsInfected:{self.willLastPeriodsInfected}, isDead:{self.isDead}.')
+            self.checkIsHealed()
+            # print(f'posx:{self.posx}, posy:{self.posy}, isInfected:{self.isInfected}, isTransitioning:{self.isTransitioning}, transitionPeriods:{self.transitionPeriods}, periodsInfected:{self.periodsInfected}, WillLastPeriodsInfected:{self.WillLastPeriodsInfected}, isDead:{self.isDead}.')
 
     def giveMovement(self, move):
         if not self.isDead:
@@ -66,15 +67,15 @@ class Person:
                         otherPerson.isTransitioning = True
 
     def checkIsHealed(self):
-        if not self.isDead and self.canHeal:
-            if self.periodsInfected >= self.willLastPeriodsInfected/2:
+        if not self.isDead and self.CanHeal:
+            if self.periodsInfected >= self.WillLastPeriodsInfected/2:
                 self.isInfected = False
                 self.periodsInfected = 0
                 self.transitionPeriods = 0
                 Person.TotalInfectedNow = Person.TotalInfectedNow - 1 
 
     def checkIsDead(self):
-        if (self.isDead or self.periodsInfected >= self.willLastPeriodsInfected):
+        if (self.isDead or self.periodsInfected >= self.WillLastPeriodsInfected):
             self.isDead = True
             self.isInfected = False
             self.periodsInfected = 0
