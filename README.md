@@ -39,6 +39,9 @@ $  git clone --recursive https://github.com/rocku0/Simple_Model_Disease_Spread.g
 ![image](https://user-images.githubusercontent.com/71210416/115117150-d06a9c00-9fa5-11eb-8e5e-fc5764cbf2a0.png)
 
 
+### An example with 1038 Periods and 500 Entities with different settings:
+![image](https://user-images.githubusercontent.com/71210416/115155837-4ba57e00-a08a-11eb-9e23-d71ad9f7fc2b.png)
+
 **Use this as you like.**
 
    [pygame]: <https://www.pygame.org/docs/>
