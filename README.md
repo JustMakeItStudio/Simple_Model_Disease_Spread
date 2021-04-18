@@ -31,16 +31,10 @@ To clone the repository, open the command prompt at the directory of choise and 
 ```sh
 $  git clone --recursive https://github.com/rocku0/Simple_Model_Disease_Spread.git
 ```
-### An example with 150 Periods and 1000 Entities:
-![image](https://user-images.githubusercontent.com/71210416/114858845-aa50ca80-9df2-11eb-8a56-acf01165c069.png)
-
 
 ### An example with 1038 Periods and 1000 Entities with different settings:
 ![image](https://user-images.githubusercontent.com/71210416/115117150-d06a9c00-9fa5-11eb-8e5e-fc5764cbf2a0.png)
 
-
-### An example with 1038 Periods and 500 Entities with different settings:
-![image](https://user-images.githubusercontent.com/71210416/115155837-4ba57e00-a08a-11eb-9e23-d71ad9f7fc2b.png)
 
 **Use this as you like.**
 
