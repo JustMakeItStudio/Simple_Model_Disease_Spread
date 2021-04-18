@@ -18,15 +18,15 @@ deadColor = (207, 51, 30) # Red
 infectedColor = (242, 157, 44) # Orange
 
 # Change these variables to see the resulting outcome
-NumberOfPersons = 300
+NumberOfPersons = 500
 WindowDimensions = (900,700) # width and hight
 InitialTransitioning = [0,0,0,0,0,0,0,1,1,1] # 1 / 10 = 10% of persons will be in the transitioning stage at period 0
-SleepTimeBetweenPeriods = 0.08 # seconds
+SleepTimeBetweenPeriods = 0.02 # seconds
 MaxPosibleMovementPerPeriod = 15
 CircleRadius = 4 # pixels
-TransitionPeriods = 12
+TransitionPeriods = 6
 CriticalDistanceOfInfection = 15 # pixels
-WillLastPeriodsInfected = 20
+WillLastPeriodsInfected = 40
 CanHeal = [0,0,0,0,0,1,1,1,1,1] # initialized at 50%
 
 
