@@ -1,8 +1,9 @@
 # Simple Model of Disease Spread
 A simple two dimensional simulation of the spread of a disease displayed by a basic visualization method. 
-
-
 Build in Python 3.
+
+![GIF 4-18-2021 9-01-58 PM](https://user-images.githubusercontent.com/71210416/115156438-f7e86400-a08c-11eb-9470-550765478bd0.gif)
+
 ## The aim
 Is to recreate the natural way of disease transmision and return different statistics graphs.
 
@@ -32,7 +33,7 @@ To clone the repository, open the command prompt at the directory of choise and 
 $  git clone --recursive https://github.com/rocku0/Simple_Model_Disease_Spread.git
 ```
 
-### An example with 1038 Periods and 1000 Entities with different settings:
+### An example with 1038 Periods and 1000 Entities with different settings (from initial versions):
 ![image](https://user-images.githubusercontent.com/71210416/115117150-d06a9c00-9fa5-11eb-8e5e-fc5764cbf2a0.png)
 
 
