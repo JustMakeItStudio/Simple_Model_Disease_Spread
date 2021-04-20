@@ -12,8 +12,8 @@ An area is created with a number of entities inside it. The boundaries are perio
  
  ### Posible improvements 
  - The algorithm as it stands has an O(n^2) time complexity. This could be improved by handling collisions.
-  - Sweep and prune.
-  - Space partitioning (Uniform grids, split the grid with K-D trees).
+   - Sweep and prune.
+   - Space partitioning (Uniform grids, split the grid with K-D trees).
 
 #### Libraries used:
 - [pygame]
