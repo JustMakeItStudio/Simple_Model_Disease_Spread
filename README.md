@@ -10,6 +10,10 @@ Is to recreate the natural way of disease transmision and return different stati
 ### Actual implementation
 An area is created with a number of entities inside it. The boundaries are periodic boundary conditions, meaning thw area is looping on it self. Each entity has some attributes that describe its state (dead, infected, can heal, etc.). In addition, every entity can move randomly. Now, by defining a critical distance between two entities, the transmision of the disease is simulated. Also, each entity has a random delay from the time of contact with an infected till the time of actually been infected and gaining the ability to infect further, called the transision period. Finally, the entities are displayed as circles, the colors are white-not infected, blue-transitioning, red-infected. 
  
+ ### Posible improvements 
+ - The algorithm as it stands has an O(n^2) time complexity. This could be improved by handling collisions.
+  - Sweep and prune.
+  - Space partitioning (Uniform grids, split the grid with K-D trees).
 
 #### Libraries used:
 - [pygame]
