@@ -34,7 +34,7 @@ You can stop the simulation by exiting the window created, afterwards the statis
 
 To clone the repository, open the command prompt at the directory of choise and type:
 ```sh
-$  git clone --recursive https://github.com/rocku0/Simple_Model_Disease_Spread.git
+$  git clone --recursive https://github.com/JustMakeItStudio/Simple_Model_Disease_Spread.git
 ```
 
 ### An example with 1038 Periods and 1000 Entities with different settings (from initial versions):
